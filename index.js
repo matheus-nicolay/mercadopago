@@ -53,7 +53,14 @@ app.post("/not", (request, response) => {
         MercadoPago.payment.search({
             qs: filter
         }).then(data => {
-            console.log(data);
+            var payment = data.body.results[0];
+
+            if(payment != undefined){
+                console.log(payment);
+            }else{
+                console.log("Payment not exists");
+            }
+            
         }).catch(error => {
             console.log(error);
         })

@@ -43,7 +43,22 @@ app.get("/pagar", async (request, response) =>{
 });
 
 app.post("/not", (request, response) => {
-    console.log(request.query);
+    var id = reques.query.id;
+
+    setTimeout(() => {
+        var filter = {
+            "order.id": id
+        }    
+
+        MercadoPago.payment.search({
+            qs: filter
+        }).then(data => {
+            console.log(data);
+        }).catch(error => {
+            console.log(error);
+        })
+    }, 20000);
+
     response.send("Ok");
 });
 

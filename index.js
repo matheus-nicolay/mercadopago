@@ -35,7 +35,6 @@ app.get("/pagar", async (request, response) =>{
 
     try{
         var payment = await MercadoPago.preferences.create(data);
-        console.log(payment);
         return response.redirect(payment.body.init_point);
     }catch(err){
         return response.send(err.message);

@@ -13,7 +13,7 @@ app.get("/", (request, response) =>{
     response.send("Olá mundo");
 });
 
-app.get("/pagar", async (request, response) =>{
+app.get("/pay", async (request, response) =>{
     var email = "matheus@gmail.com"
     var id = uuidv4();
 
@@ -56,7 +56,8 @@ app.post("/not", (request, response) => {
             var payment = data.body.results[0];
 
             if(payment != undefined){
-                console.log(payment);
+                console.log(payment.external_reference);
+                console.log(payment.status);
             }else{
                 console.log("Payment not exists");
             }

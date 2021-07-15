@@ -43,6 +43,6 @@ app.get("/pagar", async (request, response) =>{
 
 });
 
-app.listen(80, (request, response) =>{
+app.listen(process.env.PORT || 3000, (request, response) =>{
     console.log("Server is running");
 })

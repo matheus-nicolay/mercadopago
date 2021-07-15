@@ -43,6 +43,11 @@ app.get("/pagar", async (request, response) =>{
 
 });
 
+app.post("/not", (request, response) => {
+    console.log(request.query);
+    response.send("Ok");
+});
+
 app.listen(process.env.PORT || 3000, (request, response) =>{
     console.log("Server is running");
 })

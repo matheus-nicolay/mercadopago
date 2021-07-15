@@ -43,7 +43,7 @@ app.get("/pagar", async (request, response) =>{
 });
 
 app.post("/not", (request, response) => {
-    var id = reques.query.id;
+    var id = request.query.id;
 
     setTimeout(() => {
         var filter = {
